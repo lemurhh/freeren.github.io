@@ -8,25 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>WordPress维护常用的MySQL语句 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。
-创建数据库和用户create database WordPress；
-grant all on WordPress.* to jessie@localhost identified by &apos;helloworld&apos;;
-执行上述代码后，创建了名为&quot;WordPress&quot;的本地数据库以及密码为“helloworld”，用户">
+  <meta name="description" content="在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WordPress维护常用的MySQL语句">
 <meta property="og:url" content="http://yoursite.com/2016/12/31/wp-common-mysql/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。
-创建数据库和用户create database WordPress；
-grant all on WordPress.* to jessie@localhost identified by &apos;helloworld&apos;;
-执行上述代码后，创建了名为&quot;WordPress&quot;的本地数据库以及密码为“helloworld”，用户">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:description" content="在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。">
+<meta property="og:updated_time" content="2017-02-01T14:39:54.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="WordPress维护常用的MySQL语句">
-<meta name="twitter:description" content="在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。
-创建数据库和用户create database WordPress；
-grant all on WordPress.* to jessie@localhost identified by &apos;helloworld&apos;;
-执行上述代码后，创建了名为&quot;WordPress&quot;的本地数据库以及密码为“helloworld”，用户">
+<meta name="twitter:description" content="在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -186,7 +177,7 @@ grant all on WordPress.* to jessie@localhost identified by &apos;helloworld&apos
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。</p>
+        <p>在昨晚发生了灾难性事件后，我整理了一下WordPress维护常用的MySQL语句。<br><a id="more"></a></p>
 <h2 id="创建数据库和用户"><a href="#创建数据库和用户" class="headerlink" title="创建数据库和用户"></a>创建数据库和用户</h2><pre>create database WordPress；</pre>
 <pre>grant all on WordPress.* to jessie@localhost identified by 'helloworld';</pre>
 执行上述代码后，创建了名为"WordPress"的本地数据库以及密码为“helloworld”，用户名为“jessie”的本地用户。
@@ -196,13 +187,13 @@ grant all on WordPress.* to jessie@localhost identified by &apos;helloworld&apos
 从昨天的事故中才发现，数据库里的数据很重要，甚至比网站的代码还要重要，所以一定要养成备份数据库的习惯。
 <pre>root@root mysqldump -u jessie -p WordPress > backup.sql </pre>
 
-<h2 id="恢复数据库"><a href="#恢复数据库" class="headerlink" title="恢复数据库"></a>恢复数据库</h2><pre>root@root mysql -u jessie -p WordPress <　backup.sql< pre="">
+<h2 id="恢复数据库"><a href="#恢复数据库" class="headerlink" title="恢复数据库"></a>恢复数据库</h2><pre>root@root mysql -u jessie -p WordPress <　backup.sql <="" pre="">
 
 <h2 id="数据库、表"><a href="#数据库、表" class="headerlink" title="数据库、表"></a>数据库、表</h2><h3 id="列出数据库、表"><a href="#列出数据库、表" class="headerlink" title="列出数据库、表"></a>列出数据库、表</h3><pre>SHOW DATABASES;
 SHOW TABLES;</pre>
 
 <h3 id="删除数据库、表"><a href="#删除数据库、表" class="headerlink" title="删除数据库、表"></a>删除数据库、表</h3><pre>DROP DATABASES WordPress；
-DROP TABLES ;</pre></　backup.sql<></pre>
+DROP TABLES ;</pre></　backup.sql></pre>
       
 
       
@@ -444,6 +435,10 @@ DROP TABLES ;</pre></　backup.sql<></pre>
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">状态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SSL</a>
               </li>
              
@@ -457,10 +452,6 @@ DROP TABLES ;</pre></　backup.sql<></pre>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">曲阜</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">状态</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -552,6 +543,14 @@ DROP TABLES ;</pre></　backup.sql<></pre>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组合数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">儒家</a>
               </li>
              
@@ -564,11 +563,11 @@ DROP TABLES ;</pre></　backup.sql<></pre>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">庙宇</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组合数学</a>
+                <a href="javascript:void(0)" class="js-tag color3">祭祀</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -580,23 +579,11 @@ DROP TABLES ;</pre></　backup.sql<></pre>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">庙宇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">祭祀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">水准</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">error</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -605,6 +592,10 @@ DROP TABLES ;</pre></　backup.sql<></pre>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">佛教</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">error</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,15 +611,15 @@ DROP TABLES ;</pre></　backup.sql<></pre>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">故居</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">旧址</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -720,6 +711,14 @@ DROP TABLES ;</pre></　backup.sql<></pre>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">到达</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">西柏坡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">保定</a>
               </li>
              
@@ -732,11 +731,7 @@ DROP TABLES ;</pre></　backup.sql<></pre>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">西柏坡</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">到达</a>
+                <a href="javascript:void(0)" class="js-tag color3">军事</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -745,10 +740,6 @@ DROP TABLES ;</pre></　backup.sql<></pre>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">廉政</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">军事</a>
               </li>
              
               <li class="article-tag-list-item">
