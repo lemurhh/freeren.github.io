@@ -14,10 +14,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/11/25/endian/index.html">
 <meta property="og:site_name" content="Lemur博客">
 <meta property="og:description" content="大端存储(big endian)和小端存储(little endian)大小端的名字来源于《格列夫游记》：小人国内部分裂成Big-endian和Little-endian两派，区别在于一派要求从鸡蛋的大头把鸡蛋打破，另一派要求从鸡蛋的小头把鸡蛋打破。事实上，大小端是一种直译，如果换一种翻译方式可能会更好：”big endian”译为“高尾端”，”little endian”译为“低尾端”。尾端即为">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:image" content="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/11/mmexport1481554514596.jpeg">
+<meta property="og:updated_time" content="2017-02-03T05:32:23.464Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="字节序—大小端">
 <meta name="twitter:description" content="大端存储(big endian)和小端存储(little endian)大小端的名字来源于《格列夫游记》：小人国内部分裂成Big-endian和Little-endian两派，区别在于一派要求从鸡蛋的大头把鸡蛋打破，另一派要求从鸡蛋的小头把鸡蛋打破。事实上，大小端是一种直译，如果换一种翻译方式可能会更好：”big endian”译为“高尾端”，”little endian”译为“低尾端”。尾端即为">
+<meta name="twitter:image" content="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/11/mmexport1481554514596.jpeg">
   
     <link rel="alternative" href="/atom.xml" title="Lemur博客" type="application/atom+xml">
   
@@ -169,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="大端存储-big-endian-和小端存储-little-endian"><a href="#大端存储-big-endian-和小端存储-little-endian" class="headerlink" title="大端存储(big endian)和小端存储(little endian)"></a>大端存储(big endian)和小端存储(little endian)</h2><p>大小端的名字来源于《格列夫游记》：小人国内部分裂成Big-endian和Little-endian两派，区别在于一派要求从鸡蛋的大头把鸡蛋打破，另一派要求从鸡蛋的小头把鸡蛋打破。事实上，大小端是一种直译，如果换一种翻译方式可能会更好：”big endian”译为“高尾端”，”little endian”译为“低尾端”。尾端即为数据的末尾，数据的最低位。高尾端意为尾端存储在高地址，低尾端意为尾端存储在低地址。例如，0x1234567两种存储方式如下图：<br>[gallery link=”file” columns=”1” size=”medium” ids=”1048”]</p>
+        <h2 id="大端存储-big-endian-和小端存储-little-endian"><a href="#大端存储-big-endian-和小端存储-little-endian" class="headerlink" title="大端存储(big endian)和小端存储(little endian)"></a>大端存储(big endian)和小端存储(little endian)</h2><p>大小端的名字来源于《格列夫游记》：小人国内部分裂成Big-endian和Little-endian两派，区别在于一派要求从鸡蛋的大头把鸡蛋打破，另一派要求从鸡蛋的小头把鸡蛋打破。事实上，大小端是一种直译，如果换一种翻译方式可能会更好：”big endian”译为“高尾端”，”little endian”译为“低尾端”。尾端即为数据的末尾，数据的最低位。高尾端意为尾端存储在高地址，低尾端意为尾端存储在低地址。例如，0x1234567两种存储方式如下图：<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/11/mmexport1481554514596.jpeg" width="400" height="263" alt=""></p>
 <h2 id="为什么会有两种方式"><a href="#为什么会有两种方式" class="headerlink" title="为什么会有两种方式"></a>为什么会有两种方式</h2><p>有小端方式是由于：计算总是先从数据的低位开始，低位存储在低地址，电路方便，效率高。<br>而人类显然更喜欢大端方式，毕竟读写方便，所以，除了计算机的内部处理，其他情景几乎都是使用大端存储，例如网络传输、文件存储。</p>
 <h2 id="计算机如何处理数据"><a href="#计算机如何处理数据" class="headerlink" title="计算机如何处理数据"></a>计算机如何处理数据</h2><p>计算机不知道什么大端小端，它只知道按顺序读取字节，先读第一个字节再读第二个字节。如果是大端存储，先读到的就是低地址处的高位字节。如果是小端存储，先读到的就是低地址处的低位字节。</p>
 <h2 id="字节序的处理"><a href="#字节序的处理" class="headerlink" title="字节序的处理"></a>字节序的处理</h2><p>就一句话：</p>
@@ -424,6 +426,10 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">状态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SSL</a>
               </li>
              
@@ -436,23 +442,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">曲阜</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">状态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">石家庄</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">烟台</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">曲阜</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">青岛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">石家庄</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,18 +470,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">古代</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">古建筑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">西安</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">广场</a>
               </li>
              
@@ -489,6 +479,18 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">自然</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">古代</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">古建筑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">西安</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,11 +514,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组合数学</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,14 +535,6 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组合数学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -556,18 +558,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">庙宇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">祭祀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">水准</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Jerry</a>
               </li>
              
@@ -584,11 +574,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">error</a>
+                <a href="javascript:void(0)" class="js-tag color3">庙宇</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">敦煌</a>
+                <a href="javascript:void(0)" class="js-tag color3">祭祀</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">水准</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">error</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,11 +594,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">故居</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧址</a>
+                <a href="javascript:void(0)" class="js-tag color3">敦煌</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,6 +603,14 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">故居</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">旧址</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,11 +638,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">欧洲</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color3">欧洲</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,10 +662,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">公园</a>
               </li>
              
@@ -672,7 +670,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">osi</a>
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -688,6 +686,10 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">osi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
@@ -700,19 +702,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">保定</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">雾霾</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">到达</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">西柏坡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">保定</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">雾霾</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,11 +754,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">码头</a>
+                <a href="javascript:void(0)" class="js-tag color2">桥</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">桥</a>
+                <a href="javascript:void(0)" class="js-tag color3">码头</a>
               </li>
              
               <li class="article-tag-list-item">

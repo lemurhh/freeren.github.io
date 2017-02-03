@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>C语言条件编译及编译预处理 | Lemur博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C语言由源代码生成的各阶段如下：C源程序-&amp;gt;编译预处理－&amp;gt;编译－&amp;gt;优化程序－&amp;gt;汇编程序－&amp;gt;链接程序－&amp;gt;可执行文件其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。在C 语言中，并没有任何内在的机制来完成如下一些功能：在编译">
+  <meta name="description" content="C语言由源代码生成的各阶段如下：C源程序-&amp;gt;编译预处理－&amp;gt;编译－&amp;gt;优化程序－&amp;gt;汇编程序－&amp;gt;链接程序－&amp;gt;可执行文件其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。在C语言中，并没有任何内在的机制来完成如下一些功能：在编译时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C语言条件编译及编译预处理">
 <meta property="og:url" content="http://yoursite.com/2016/08/10/c-pre-process/index.html">
 <meta property="og:site_name" content="Lemur博客">
-<meta property="og:description" content="C语言由源代码生成的各阶段如下：C源程序-&amp;gt;编译预处理－&amp;gt;编译－&amp;gt;优化程序－&amp;gt;汇编程序－&amp;gt;链接程序－&amp;gt;可执行文件其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。在C 语言中，并没有任何内在的机制来完成如下一些功能：在编译">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:description" content="C语言由源代码生成的各阶段如下：C源程序-&amp;gt;编译预处理－&amp;gt;编译－&amp;gt;优化程序－&amp;gt;汇编程序－&amp;gt;链接程序－&amp;gt;可执行文件其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。在C语言中，并没有任何内在的机制来完成如下一些功能：在编译时">
+<meta property="og:updated_time" content="2017-02-03T05:42:54.718Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言条件编译及编译预处理">
-<meta name="twitter:description" content="C语言由源代码生成的各阶段如下：C源程序-&amp;gt;编译预处理－&amp;gt;编译－&amp;gt;优化程序－&amp;gt;汇编程序－&amp;gt;链接程序－&amp;gt;可执行文件其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。在C 语言中，并没有任何内在的机制来完成如下一些功能：在编译">
+<meta name="twitter:description" content="C语言由源代码生成的各阶段如下：C源程序-&amp;gt;编译预处理－&amp;gt;编译－&amp;gt;优化程序－&amp;gt;汇编程序－&amp;gt;链接程序－&amp;gt;可执行文件其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。在C语言中，并没有任何内在的机制来完成如下一些功能：在编译时">
   
     <link rel="alternative" href="/atom.xml" title="Lemur博客" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="C语言由源代码生成的各阶段如下："><a href="#C语言由源代码生成的各阶段如下：" class="headerlink" title="C语言由源代码生成的各阶段如下："></a>C语言由源代码生成的各阶段如下：</h2><p>C源程序-&gt;编译预处理－&gt;编译－&gt;优化程序－&gt;汇编程序－&gt;链接程序－&gt;可执行文件<br>其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。<br>在C 语言中，并没有任何内在的机制来完成如下一些功能：在编译时包含其他源文件、定义宏、根据条件决定编译时是否包含某些代码。要完成这些工作，就需要使用预处理程序。尽管在目前绝大多数编译器都包含了预处理程序，但通常认为它们是独立于编译器的。预处理过程读入源代码，检查包含预处理指令的语句和宏定义，并 对源代码进行响应的转换。预处理过程还会删除程序中的注释和多余的空白字符。</p>
+        <h2 id="C语言由源代码生成的各阶段如下："><a href="#C语言由源代码生成的各阶段如下：" class="headerlink" title="C语言由源代码生成的各阶段如下："></a>C语言由源代码生成的各阶段如下：</h2><p>C源程序-&gt;编译预处理－&gt;编译－&gt;优化程序－&gt;汇编程序－&gt;链接程序－&gt;可执行文件<br>其中编译预处理阶段，读取c源程序，对其中的伪指令（以#开头的指令）和特殊符号进行处理。或者说是扫描源代码，对其进行初步的转换，产生新的源代码提供给编译器。预处理过程先于编译器对源代码进行处理。<br>在C语言中，并没有任何内在的机制来完成如下一些功能：在编译时包含其他源文件、定义宏、根据条件决定编译时是否包含某些代码。要完成这些工作，就需要使用预处理程序。尽管在目前绝大多数编译器都包含了预处理程序，但通常认为它们是独立于编译器的。预处理过程读入源代码，检查包含预处理指令的语句和宏定义，并 对源代码进行响应的转换。预处理过程还会删除程序中的注释和多余的空白字符。<br><a id="more"></a></p>
 <h2 id="伪指令（或预处理指令）定义"><a href="#伪指令（或预处理指令）定义" class="headerlink" title="伪指令（或预处理指令）定义"></a>伪指令（或预处理指令）定义</h2><p>预处理指令是以#号开头的代码行。#号必须是该行除了任何空白字符外的第一个字符。#后是指令关键字，在关键字和#号之间允许存在任意个数的空白字符。整行语句构成了一条预处理指令，该指令将在编译器进行编译之前对源代码做某些转换。下面是部分预处理指令：</p>
 <pre>
 指令    用途
@@ -602,6 +602,10 @@ int main(void)
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">状态</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">SSL</a>
               </li>
              
@@ -614,23 +618,19 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">曲阜</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">状态</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">石家庄</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">烟台</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">曲阜</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">青岛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">石家庄</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -646,18 +646,6 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">古代</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">古建筑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">西安</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">广场</a>
               </li>
              
@@ -667,6 +655,18 @@ int main(void)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">自然</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">古代</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">古建筑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">西安</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -690,11 +690,19 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">优化</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">组合数学</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">优化</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -703,14 +711,6 @@ int main(void)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">缓存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">组合数学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -734,18 +734,6 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">庙宇</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">祭祀</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">水准</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Jerry</a>
               </li>
              
@@ -762,11 +750,19 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">error</a>
+                <a href="javascript:void(0)" class="js-tag color3">庙宇</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">敦煌</a>
+                <a href="javascript:void(0)" class="js-tag color3">祭祀</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">水准</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">error</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -774,11 +770,7 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">故居</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">旧址</a>
+                <a href="javascript:void(0)" class="js-tag color3">敦煌</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -787,6 +779,14 @@ int main(void)
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">故居</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">旧址</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -814,11 +814,11 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">欧洲</a>
+                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">爬虫</a>
+                <a href="javascript:void(0)" class="js-tag color3">欧洲</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -838,10 +838,6 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">公园</a>
               </li>
              
@@ -850,7 +846,7 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">osi</a>
+                <a href="javascript:void(0)" class="js-tag color5">汇编语言</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -866,6 +862,10 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">osi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
@@ -878,19 +878,19 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">保定</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">雾霾</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">到达</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">西柏坡</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">保定</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">雾霾</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -930,11 +930,11 @@ int main(void)
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">码头</a>
+                <a href="javascript:void(0)" class="js-tag color2">桥</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">桥</a>
+                <a href="javascript:void(0)" class="js-tag color3">码头</a>
               </li>
              
               <li class="article-tag-list-item">
