@@ -102,19 +102,26 @@
 
 
 
-<meta name="description" content="stat命令使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见百科)。[gallery link=”file” columns=”1” size=”medium” ids=”297”]
-file命令在stat命令输出的文件信息中仍然缺少">
+<meta name="description" content="stat命令使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见百科)。
+file命令在stat命令输出的文件信息中仍然缺少一项重要内容——文件类型。这时需要使用file命令查看，file命令将文件类型分为三类：
+第一个实例是一个文本文件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux命令——stat、file命令">
 <meta property="og:url" content="https://www.lemurs.me/2016/08/17/linux-stat-file/index.html">
 <meta property="og:site_name" content="Lemur博客">
-<meta property="og:description" content="stat命令使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见百科)。[gallery link=”file” columns=”1” size=”medium” ids=”297”]
-file命令在stat命令输出的文件信息中仍然缺少">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:description" content="stat命令使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见百科)。
+file命令在stat命令输出的文件信息中仍然缺少一项重要内容——文件类型。这时需要使用file命令查看，file命令将文件类型分为三类：
+第一个实例是一个文本文件">
+<meta property="og:image" content="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/08/2016081717343527.png">
+<meta property="og:image" content="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2017/01/linux-file-type.PNG">
+<meta property="og:image" content="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/08/2016081717271081.png">
+<meta property="og:updated_time" content="2017-02-05T08:27:23.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令——stat、file命令">
-<meta name="twitter:description" content="stat命令使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见百科)。[gallery link=”file” columns=”1” size=”medium” ids=”297”]
-file命令在stat命令输出的文件信息中仍然缺少">
+<meta name="twitter:description" content="stat命令使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见百科)。
+file命令在stat命令输出的文件信息中仍然缺少一项重要内容——文件类型。这时需要使用file命令查看，file命令将文件类型分为三类：
+第一个实例是一个文本文件">
+<meta name="twitter:image" content="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/08/2016081717343527.png">
 
 
 
@@ -401,8 +408,9 @@ file命令在stat命令输出的文件信息中仍然缺少">
       
 
       
-        <h2 id="stat命令"><a href="#stat命令" class="headerlink" title="stat命令"></a>stat命令</h2><p>使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见<a href="http://baike.baidu.com/link?url=07ia0zemlvxOnCQBi-GoCMyHeeMbh0yrxnQnb9VQ--h7VNFIdqlSHQ4LXYQTRg5Vax6tg3HPF6C93ZM1-vMCYK" target="_blank" rel="external">百科</a>)。<br>[gallery link=”file” columns=”1” size=”medium” ids=”297”]</p>
-<h2 id="file命令"><a href="#file命令" class="headerlink" title="file命令"></a>file命令</h2><p>在stat命令输出的文件信息中仍然缺少一项重要内容——文件类型。这时需要使用file命令查看，file命令将文件类型分为三类：<br>[table id=3 /]<br>[gallery link=”file” columns=”1” size=”medium” ids=”295”]<br>第一个实例是一个文本文件，file命令不仅能确定该文件包含文本，而且能确定文字的编码格式是ASCII码。第二个实例是一个文本脚本文件，尽管该文件也是一个文本文件，但由于它也是一个脚本文件，因此可以在操作系统运行。最后一个实例是一个二进制可执行程序，并确定了编译该程序的平台以及它需要的库类型，如果有一个来自未知源的二进制可执行程序，则该命令将非常有用。</p>
+        <h2 id="stat命令"><a href="#stat命令" class="headerlink" title="stat命令"></a>stat命令</h2><p>使用ls命令虽然能查看文件的大部分信息，但仍然有部分信息无法获得，stat命令能提供文件系统中文件状态的完整摘要，甚至能显示存储该文件的设备的主设备号和次设备号(主设备号提供设备的类型，次设备号确定具体的设备，详见<a href="http://baike.baidu.com/link?url=07ia0zemlvxOnCQBi-GoCMyHeeMbh0yrxnQnb9VQ--h7VNFIdqlSHQ4LXYQTRg5Vax6tg3HPF6C93ZM1-vMCYK" target="_blank" rel="external">百科</a>)。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/08/2016081717343527.png" title="stat命令"></p>
+<h2 id="file命令"><a href="#file命令" class="headerlink" title="file命令"></a>file命令</h2><p>在stat命令输出的文件信息中仍然缺少一项重要内容——文件类型。这时需要使用file命令查看，file命令将文件类型分为三类：<br><img src="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2017/01/linux-file-type.PNG" title=""></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/08/2016081717271081.png" title="file命令"><br>第一个实例是一个文本文件，file命令不仅能确定该文件包含文本，而且能确定文字的编码格式是ASCII码。第二个实例是一个文本脚本文件，尽管该文件也是一个文本文件，但由于它也是一个脚本文件，因此可以在操作系统运行。最后一个实例是一个二进制可执行程序，并确定了编译该程序的平台以及它需要的库类型，如果有一个来自未知源的二进制可执行程序，则该命令将非常有用。</p>
 
       
     </div>
@@ -886,6 +894,21 @@ file命令在stat命令输出的文件信息中仍然缺少">
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

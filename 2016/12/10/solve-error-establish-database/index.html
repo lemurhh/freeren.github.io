@@ -102,19 +102,19 @@
 
 
 
-<meta name="description" content="之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。首先，我发现phpmyadmin也无法登陆，提示202错误，所以我怀疑并不是wordpress的">
+<meta name="description" content="之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于Error establishing a database connection问题">
 <meta property="og:url" content="https://www.lemurs.me/2016/12/10/solve-error-establish-database/index.html">
 <meta property="og:site_name" content="Lemur博客">
-<meta property="og:description" content="之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。首先，我发现phpmyadmin也无法登陆，提示202错误，所以我怀疑并不是wordpress的">
+<meta property="og:description" content="之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。">
 <meta property="og:image" content="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-300x20.png">
 <meta property="og:image" content="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-1-300x47.png">
 <meta property="og:image" content="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-2-300x21.png">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:updated_time" content="2017-02-05T07:58:47.962Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于Error establishing a database connection问题">
-<meta name="twitter:description" content="之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。首先，我发现phpmyadmin也无法登陆，提示202错误，所以我怀疑并不是wordpress的">
+<meta name="twitter:description" content="之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。">
 <meta name="twitter:image" content="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-300x20.png">
 
 
@@ -402,7 +402,7 @@
       
 
       
-        <p>之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。<br>首先，我发现phpmyadmin也无法登陆，提示202错误，所以我怀疑并不是wordpress的配置出现了问题，而是数据库的问题。于是就查看数据库的日志记录。但不知道数据库日志记录的地址，于是运行</p>
+        <p>之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。<br><a id="more"></a><br>首先，我发现phpmyadmin也无法登陆，提示202错误，所以我怀疑并不是wordpress的配置出现了问题，而是数据库的问题。于是就查看数据库的日志记录。但不知道数据库日志记录的地址，于是运行</p>
 <p><pre>cat /etc/my.cnf</pre><br>发现位于<br><a href="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获.png" target="_blank" rel="external"><img src="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-300x20.png" alt=""></a><br>然后查看日志记录，发现所有的错误都是重复的：<br><a href="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-1.png" target="_blank" rel="external"><img src="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-1-300x47.png" alt=""></a><br>显然是内存不足，就把mysql的进程kill掉了。但用free -m看了一下buffer的空余还有几百兆，那应该是由于innodb_buffer_pool_size的值太大，于是将my.cnf中该项的值改为96M。<br><a href="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-2.png" target="_blank" rel="external"><img src="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-2-300x21.png" alt=""></a><br>另外用free -m查看时发现虚拟内存为0，，，于是又增大了下虚拟内存,大小为512M。<br>使用如下命令：</p>
 <p><pre>dd if=/dev/zero of=/swapadd bs=1024 count=524288<br>mkswap /swapadd<br>swapon /swapadd</pre><br>重启，果然问题解决了。</p>
 
@@ -863,6 +863,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

@@ -562,12 +562,14 @@
 
       
         
-          
-            <p>之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。<br>首先，我发现phpmyadmin也无法登陆，提示202错误，所以我怀疑并不是wordpress的配置出现了问题，而是数据库的问题。于是就查看数据库的日志记录。但不知道数据库日志记录的地址，于是运行</p>
-<p><pre>cat /etc/my.cnf</pre><br>发现位于<br><a href="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获.png" target="_blank" rel="external"><img src="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-300x20.png" alt=""></a><br>然后查看日志记录，发现所有的错误都是重复的：<br><a href="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-1.png" target="_blank" rel="external"><img src="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-1-300x47.png" alt=""></a><br>显然是内存不足，就把mysql的进程kill掉了。但用free -m看了一下buffer的空余还有几百兆，那应该是由于innodb_buffer_pool_size的值太大，于是将my.cnf中该项的值改为96M。<br><a href="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-2.png" target="_blank" rel="external"><img src="http://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/捕获-2-300x21.png" alt=""></a><br>另外用free -m查看时发现虚拟内存为0，，，于是又增大了下虚拟内存,大小为512M。<br>使用如下命令：</p>
-<p><pre>dd if=/dev/zero of=/swapadd bs=1024 count=524288<br>mkswap /swapadd<br>swapon /swapadd</pre><br>重启，果然问题解决了。</p>
-
-          
+          <p>之前就出现过Error establishing a database connection的问题，不过频率不高，大约几周一次，重启下服务器就好了。可最近，这个问题出现地越来越频繁，以至于刚刚重启，过一会儿就又出错，严重影响使用，不得不解决了。看了看网上的资料发现都是互相抄袭，还模糊不清，决定自己解决。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/10/solve-error-establish-database/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -892,18 +894,14 @@
 
       
         
-          
-            <p>离开康有为故居纪念馆之后，我发现，以前虽知道他是一个很复杂的历史人物，但对他的了解———只是一个空喊救国却无思想深度的无能书生——是如此片面，连一个侧面都算不上。但可惜的是，我还没有参观完毕，工作人员就催着下班了，但那时才四点不到有没有。。。等我后天再去，参观完毕后，再补写。</p>
-<h2 id="到达"><a href="#到达" class="headerlink" title="到达"></a>到达</h2><p>再次到康有为故居纪念馆是在从水准零点景区返回之后。这次时间很充裕可以慢慢看了。<br>[gallery columns=”2” link=”file” size=”medium” ids=”1109,1110”]</p>
-<h2 id="康有为与康有为故居纪念馆"><a href="#康有为与康有为故居纪念馆" class="headerlink" title="康有为与康有为故居纪念馆"></a>康有为与康有为故居纪念馆</h2><p>[gray-strip]<br>康有为（1858-1927），广东南海人，字广厦，号长素，戊戌后更为更生，广东南海人，世称南海先生，近现代文化先驱，国学大师，资产阶级维新变法领袖，著名思想家、政治家、教育家和书法家，学贯中西，迹遍全球。在德占胶澳、戊戌变法、五四运动、青岛主权回归等重大历史事件发生之际，先后十余次为青岛主权回归问题而发出救亡图存的历史性呼告，晚年寓居青岛，堪称与青岛结缘最深的一位历史文化名人。<br>康有为故居位于中国历史文化名街——小鱼人文化名人街区，是全国最大的康有为纪念馆之一。故居始建于1899年，原为德国总督副官、海军上尉弗莱海顿·利利恩可龙的宅邸，是青岛最早的德式建筑之一。1923年6月康有为入住其中，并题名“天游园”，1927年3月31日在此过世。<br>[/gray-strip]<br>[gallery size=”medium” link=”file” ids=”1111,1113,1112”]</p>
-<h2 id="客厅"><a href="#客厅" class="headerlink" title="客厅"></a>客厅</h2><p>客厅位于二楼，为康有为先生会客之处，当时，晚清遗老、西方传教士、北洋官僚及革命党人俱曾为座上客。<br>[gallery columns=”1” size=”medium” link=”file” ids=”1115”]</p>
-<h2 id="康有为生平事迹陈列"><a href="#康有为生平事迹陈列" class="headerlink" title="康有为生平事迹陈列"></a>康有为生平事迹陈列</h2><p>客厅对面的一间房子现在被辟为了康有为生平事迹陈列馆。上次就是参观到这工作人员下班了。<br>作为“先进的中国人”的杰出代表，康有为以其高度的文化自觉而直面“三千年未有之大变局”，标志着近代知识分子的伟大觉醒和高度担当。身处中华民族生死存亡的危急关头，在东西方文明激烈碰撞、中国文化彻底转型的大背景下，他担负起历史使命和民族大义，引领时代潮流，推动启蒙、救亡与变法大业。1898年6月至9月，他与梁启超等人通过清光绪帝领导了戊戌变法运动，对中国近现代历史进程产生了重大而深远的影响。变法失败后，他逃亡海外十六年，游历四大洲三十余国，全面考察了各国的政治、经济与文化，比照世界大势思考中国命运，理出许多对今天依然有启示意义的真知灼见。<br>面对康有为，如同面对一重重历史迷津，岁月往复回旋，矛盾常变常新，而启示无所不在。今古之间，他是承受历史毁誉最多的人物之一。他是旧学的殿军，亦是新学的开山。从儒家经典出发，参合西学以改造中学，系统回应中国现代性问题。著《新学伪经考》和《孔子改制考》，为维新变法奠定理论基础。在整合中西思想资源的基础上，成煌煌巨著《大同书》，为人类设计出一个五阶级、无压迫、人人自由平等的大同世界，内中既蕴儒家“天下为公”之理想、佛家“普度众生”之宏愿，亦含空想社会主义色彩。<br>从南海到中国，从中国到世界，从世界到青岛，这是思想者的人生轨迹，也是心路历程。<br>[gallery columns=”6” link=”file” ids=”1117,1122,1121,1120,1119,1118”]<br>[gallery columns=”6” link=”file” ids=”1128,1127,1126,1125,1124,1123”]<br>[gallery columns=”6” link=”file” ids=”1134,1133,1132,1131,1130,1129”]<br>[gallery columns=”6” link=”file” ids=”1140,1139,1138,1137,1136,1135”]<br>[gallery columns=”6” link=”file” ids=”1146,1145,1144,1143,1142,1141”]<br>[gallery columns=”6” link=”file” ids=”1147,1152,1151,1150,1149,1148”]<br>[gallery columns=”6” link=”file” ids=”1158,1157,1156,1155,1154,1153”]<br>[gallery columns=”6” link=”file” ids=”1159,1164,1163,1162,1161,1160”]<br>[gallery columns=”6” link=”file” ids=”1165,1170,1169,1168,1167,1166”]<br>[gallery columns=”6” link=”file” ids=”1176,1175,1174,1173,1172,1171”]<br>[gallery columns=”6” link=”file” ids=”1182,1181,1180,1179,1178,1177”]<br>[gallery columns=”5” link=”file” ids=”1186,1185,1184,1183,1187”]</p>
-<h2 id="卧室"><a href="#卧室" class="headerlink" title="卧室"></a>卧室</h2><p>参观完生平事迹陈列馆后，上楼就到了卧室。<br>康有为先生憩息之处。1927年3月31日凌晨在此过世，遂长眠于青岛碧海青山之间。<br>[gallery size=”medium” link=”file” ids=”1188,1190,1189”]</p>
-<h2 id="书房（天游堂）"><a href="#书房（天游堂）" class="headerlink" title="书房（天游堂）"></a>书房（天游堂）</h2><p>卧室对面就是书房。<br>康有为先生结笔之处。末代皇帝溥仪曾特书“天游堂”匾额相赠，因以为堂号。<br>[gallery link=”file” columns=”1” size=”medium” ids=”1191”]</p>
-<h2 id="康有为的文明世界之路"><a href="#康有为的文明世界之路" class="headerlink" title="康有为的文明世界之路"></a>康有为的文明世界之路</h2><p>书房的隔壁现在是康有为的文明世界之路展馆，内中有康有为收藏的世界各国的文物。<br>“维新百日，出亡十六年，三周大地，游遍四洲，经三十一国，行六十万里”，这是康有为请吴昌硕为其镌刻印章的印文，总结一生，意味深长。<br>康有为是19世纪末“睁眼看世界”的代表人物，也是近代中国，行世界之路最长的思想者。1898年戊戌变法失败后，他开始了漫长的海外流亡生涯，至1913年归国，历时十六年，足迹遍及亚美欧非四大洲并创始性地进入北极圈，考察了世界三十余国的历史、地理、文化、政治、经济与风俗，展开了一场宏阔的跨文化对话，创建颇多，缘此而形成的文化史观博大精微，对今天依然有着多方面、多层次的认知价值。同时，他还是中国博物馆思想的先知先觉者，深刻洞察了近代公共博物馆在传承文明、开启民智方面的卓越功用，呼吁大力保护古物，以为新文明创造之原动力。为此，他广泛搜求各国风物，准备归国开办博物院，以开启国人眼界，培育世界情怀。如今这些见证物多藏青岛，展示了一位学贯中西、迹遍全球的人文行者的心路历程，透射出多元文明对话与融合的渊默景深。<br>在东方与西方、古代与现代、人文与自然视野中审视康有为的世界之路，必将有所启示。在先驱者引导下，让我们共同见证文化多样性的价值，共同感受这同一个世界的意义。<br>[gallery columns=”8” link=”file” ids=”1192,1199,1198,1197,1196,1194,1193,1195”]<br>[gallery columns=”6” link=”file” ids=”1206,1204,1203,1202,1201,1200”]<br>[gallery columns=”6” link=”file” ids=”1212,1211,1210,1209,1208,1207”]<br>[gallery columns=”6” link=”file” ids=”1218,1217,1216,1215,1214,1213”]<br>[gallery size=”medium” link=”file” ids=”1221,1220,1219”]</p>
-<h2 id="康有为书法展"><a href="#康有为书法展" class="headerlink" title="康有为书法展"></a>康有为书法展</h2><p>与展馆相连的另一间房现在是康有为书法展。<br>[gallery columns=”2” link=”file” size=”medium” ids=”1223,1222”]</p>
-
-          
+          <p>离开康有为故居纪念馆之后，我发现，以前虽知道他是一个很复杂的历史人物，但对他的了解———只是一个空喊救国却无思想深度的无能书生——是如此片面，连一个侧面都算不上。但可惜的是，我还没有参观完毕，工作人员就催着下班了，但那时才四点不到有没有。。。等我后天再去，参观完毕后，再补写。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/09/kangyouwei-former-home/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1051,10 +1049,14 @@
 
       
         
-          
-            <p>哈哈，今天大雪，这是转自<a href="http://news.xinhuanet.com/city/2016-12/07/c_129393827.htm" target="_blank" rel="external">新华网</a>的与雪有关的诗词，收了。过一段时间就去东北看雪去。<br>[gallery columns=”8” link=”file” size=”medium” ids=”930,931,932,933,934,935,936,937”]</p>
-
-          
+          <p>哈哈，今天大雪，这是转自<a href="http://news.xinhuanet.com/city/2016-12/07/c_129393827.htm">新华网</a>的与雪有关的诗词，收了。过一段时间就去东北看雪去。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/12/07/snow-in-poems/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1365,16 +1367,34 @@
       
         
           
-            <p>听说晚上和奥帆基地更配哦。所以我决定顶着晚上凛冽的海风去奥帆基地和五四广场看夜景。<br>[gallery link=”file” columns=”1” size=”medium” ids=”886”]</p>
-<h2 id="旗阵广场"><a href="#旗阵广场" class="headerlink" title="旗阵广场"></a>旗阵广场</h2><p>从2门进入奥帆基地后，首先看到的是旗阵广场，不过，现在只剩下旗杆，没有旗子了。<br>[gallery link=”file” columns=”1” size=”medium” ids=”906”]</p>
-<h2 id="码头"><a href="#码头" class="headerlink" title="码头"></a>码头</h2><p>在旗阵广场前有两条路可以走，一条通向情人坝，一条通向奥运火炬和五四广场。按照计划我先去情人坝，后返回到旗阵广场去五四广场。在去情人坝的路上会经过码头。<br>[gallery columns=”7” link=”file” ids=”893,887,888,889,890,891,892”]</p>
-<h2 id="雕塑"><a href="#雕塑" class="headerlink" title="雕塑"></a>雕塑</h2><p>在情人坝开头处，有一尊帆船运动员的雕塑。为什么选择女性运动员？可能是因为女性是纯、善、美的代表吧。也可能是她的原型就是徐莉佳。<br>[gallery columns=”2” size=”medium” link=”file” ids=”905,904”]</p>
-<h2 id="情人坝"><a href="#情人坝" class="headerlink" title="情人坝"></a>情人坝</h2><p>好好的一个坝，干嘛起这么虐的名字。。。在坝上能看到青岛的夜景，远处是现代化的高楼大厦，还能看到五四广场著名的五月的风，有上海的范儿。<br>[gallery size=”medium” link=”file” ids=”894,895,896”]<br>[gallery size=”medium” link=”file” ids=”897,898,899”]<br>[gallery size=”medium” link=”file” ids=”900,901,902”]</p>
-<h2 id="灯塔"><a href="#灯塔" class="headerlink" title="灯塔"></a>灯塔</h2><p>在情人坝的另一头有一个灯塔。<br>[gallery columns=”1” link=”file” size=”medium” ids=”903”]</p>
-<h2 id="奥运火炬"><a href="#奥运火炬" class="headerlink" title="奥运火炬"></a>奥运火炬</h2><p>从情人坝返回到旗阵广场，然后沿着另一条路走，就能看到一个巨大的08年北京奥运会火炬。而另一侧就是五四广场，两者遥相辉映，也确实该让当年五四运动中的时代弄潮儿们看到中华民族的百年奥运梦实现的那一刻。<br>[gallery size=”medium” link=”file” ids=”907,908,909”]</p>
-<h2 id="五四广场"><a href="#五四广场" class="headerlink" title="五四广场"></a>五四广场</h2><p>历史终究是记住了1919年5月4日这一天。高中时学校把假期抠得很紧，但每年的五四青年节都会举行文艺表演，当时确实有些不理解，感觉那个时代离我们太遥远了。但是当我站在了五月的风这座雕像前时，分明地感受到了来自那个风起云涌的大时代的伟大力量，一切不再遥远，那是一个年纪轻轻就能干大事、属于年轻人的时代，是一个走上大街、振臂一呼的年代，是一个充满迷茫但又激情洋溢、无数年轻人上下求索、救亡图存的半个世纪。如今这座五月的风雕塑，充满着张杨腾升的力量，就像腾地而起的劲风，摧枯拉朽般地席卷着一切旧时代的桎梏。<br>[gallery columns=”2” size=”medium” link=”file” ids=”911,910”]</p>
-<h2 id="美团小哥"><a href="#美团小哥" class="headerlink" title="美团小哥"></a>美团小哥</h2><p>还在寒风中等待派单的美团小哥，真是不容易。<br>[gallery link=”file” columns=”1” size=”medium” ids=”912”]</p>
-<h2 id="公交"><a href="#公交" class="headerlink" title="公交"></a>公交</h2><p>返程公交中发现的，不知道有多少公交车司机能够真正做到。<br>[gallery link=”file” columns=”1” size=”medium” ids=”913”]<br>另外，不知道扶手为什么要这么设计。<br>[gallery link=”file” columns=”1” size=”medium” ids=”922”]</p>
+            <p>听说晚上和奥帆基地更配哦。所以我决定顶着晚上凛冽的海风去奥帆基地和五四广场看夜景。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01786.jpg" width="700" height="526" title="青岛奥林匹克帆船中心"></p>
+<h2 id="旗阵广场"><a href="#旗阵广场" class="headerlink" title="旗阵广场"></a>旗阵广场</h2><p>从2门进入奥帆基地后，首先看到的是旗阵广场，不过，现在只剩下旗杆，没有旗子了。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_200642.jpg" width="700" height="526" title="旗阵广场"></p>
+<h2 id="码头"><a href="#码头" class="headerlink" title="码头"></a>码头</h2><p>在旗阵广场前有两条路可以走，一条通向情人坝，一条通向奥运火炬和五四广场。按照计划我先去情人坝，后返回到旗阵广场去五四广场。在去情人坝的路上会经过码头。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_192851.jpg" width="700" height="526" title="码头"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01789.jpg" width="700" height="526" title="码头"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_191654.jpg" width="700" height="526" title="码头"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_191801.jpg" width="700" height="526" title="码头"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_192154.jpg" width="700" height="526" title="码头"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_192404.jpg" width="700" height="526" title="码头"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_192741.jpg" width="700" height="526" title="码头"></p>
+<h2 id="雕塑"><a href="#雕塑" class="headerlink" title="雕塑"></a>雕塑</h2><p>在情人坝开头处，有一尊帆船运动员的雕塑。为什么选择女性运动员？可能是因为女性是纯、善、美的代表吧。也可能是她的原型就是徐莉佳。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_195905.jpg" width="526" height="700" title="雕塑"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_195752.jpg" width="526" height="700" title="雕塑"></p>
+<h2 id="情人坝"><a href="#情人坝" class="headerlink" title="情人坝"></a>情人坝</h2><p>好好的一个坝，干嘛起这么虐的名字。。。在坝上能看到青岛的夜景，远处是现代化的高楼大厦，还能看到五四广场著名的五月的风，有上海的范儿。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_193435.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_193625.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_193706.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_193952.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_194245.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_194413.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_194639.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_194908.jpg" width="700" height="526" title="情人坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_194921.jpg" width="700" height="526" title="情人坝"></p>
+<h2 id="灯塔"><a href="#灯塔" class="headerlink" title="灯塔"></a>灯塔</h2><p>在情人坝的另一头有一个灯塔。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_195107.jpg" width="700" height="526" title="灯塔"></p>
+<h2 id="奥运火炬"><a href="#奥运火炬" class="headerlink" title="奥运火炬"></a>奥运火炬</h2><p>从情人坝返回到旗阵广场，然后沿着另一条路走，就能看到一个巨大的08年北京奥运会火炬。而另一侧就是五四广场，两者遥相辉映，也确实该让当年五四运动中的时代弄潮儿们看到中华民族的百年奥运梦实现的那一刻。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_201259.jpg" width="700" height="526" title="奥运火炬"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_201541.jpg" width="700" height="526" title="奥运火炬"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_202231.jpg" width="700" height="526" title="奥运火炬"></p>
+<h2 id="五四广场"><a href="#五四广场" class="headerlink" title="五四广场"></a>五四广场</h2><p>历史终究是记住了1919年5月4日这一天。高中时学校把假期抠得很紧，但每年的五四青年节都会举行文艺表演，当时确实有些不理解，感觉那个时代离我们太遥远了。但是当我站在了五月的风这座雕像前时，分明地感受到了来自那个风起云涌的大时代的伟大力量，一切不再遥远，那是一个年纪轻轻就能干大事、属于年轻人的时代，是一个走上大街、振臂一呼的年代，是一个充满迷茫但又激情洋溢、无数年轻人上下求索、救亡图存的半个世纪。如今这座五月的风雕塑，充满着张杨腾升的力量，就像腾地而起的劲风，摧枯拉朽般地席卷着一切旧时代的桎梏。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_203412.jpg" width="700" height="526" title="五月的风"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_202859.jpg" width="700" height="526" title="五月的风"></p>
+<h2 id="美团小哥"><a href="#美团小哥" class="headerlink" title="美团小哥"></a>美团小哥</h2><p>还在寒风中等待派单的美团小哥，真是不容易。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_203913.jpg" width="700" height="526" title="美团小哥"></p>
+<h2 id="公交"><a href="#公交" class="headerlink" title="公交"></a>公交</h2><p>返程公交中发现的，不知道有多少公交车司机能够真正做到。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_210114.jpg" width="700" height="526" title=""><br>另外，不知道扶手为什么要这么设计。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/%E5%85%AC%E4%BA%A4%E8%BD%A6%E6%8A%8A.jpg" width="700" height="526" title=""></p>
 
           
         
@@ -1703,11 +1723,21 @@
         
           
             <p>八大关景区的一侧是紧贴海岸线的，在我去花石楼的路上路过了第三海水浴场。今天青岛的天气很好，海岸的景色很不错。</p>
-<h2 id="鹅卵石"><a href="#鹅卵石" class="headerlink" title="鹅卵石"></a>鹅卵石</h2><p>在海滩捡到了一颗鹅卵石，很纯净，就喜欢这种至善至美的事物。<br>[gallery link=”file” columns=”1” size=”medium” ids=”856”]</p>
-<h2 id="海岸"><a href="#海岸" class="headerlink" title="海岸"></a>海岸</h2><p>[gallery size=”medium” link=”file” ids=”827,828,831”]</p>
-<h2 id="大坝"><a href="#大坝" class="headerlink" title="大坝"></a>大坝</h2><p>[gallery size=”medium” link=”file” ids=”855,835,838”]</p>
-<h2 id="碣石"><a href="#碣石" class="headerlink" title="碣石"></a>碣石</h2><p>[gallery link=”file” columns=”2” size=”medium” ids=”839,836”]</p>
-<h2 id="人"><a href="#人" class="headerlink" title="人"></a>人</h2><p>[gallery columns=”2” link=”file” size=”medium” ids=”842,840”]<br>[gallery columns=”2” link=”file” size=”medium” ids=”832,841”]<br>[gallery columns=”2” link=”file” size=”medium” ids=”834,830”]</p>
+<h2 id="鹅卵石"><a href="#鹅卵石" class="headerlink" title="鹅卵石"></a>鹅卵石</h2><p>在海滩捡到了一颗鹅卵石，很纯净，就喜欢这种至善至美的事物。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_095144.jpg" width="526" height="700" title="鹅卵石"></p>
+<h2 id="海岸"><a href="#海岸" class="headerlink" title="海岸"></a>海岸</h2><p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01636.jpg" width="700" height="526" title="海岸"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01637.jpg" width="700" height="526" title="海岸"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01640.jpg" width="700" height="526" title="海岸"></p>
+<h2 id="大坝"><a href="#大坝" class="headerlink" title="大坝"></a>大坝</h2><p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/IMG_20161206_094855.jpg" width="700" height="526" title="大坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01647.jpg" width="700" height="526" title="大坝"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01650.jpg" width="700" height="526" title="大坝"></p>
+<h2 id="碣石"><a href="#碣石" class="headerlink" title="碣石"></a>碣石</h2><p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01655.jpg" width="700" height="526" title="碣石"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01648.jpg" width="700" height="526" title="碣石"></p>
+<h2 id="人"><a href="#人" class="headerlink" title="人"></a>人</h2><p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01659.jpg" width="700" height="526" title="情侣"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01656.jpg" width="700" height="526" title="游客"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01642.jpg" width="700" height="526" title="垂钓"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01658.jpg" width="700" height="526" title="垂钓"></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01644.jpg" width="700" height="526" title=""></p>
+<p><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/12/DSC01639.jpg" width="700" height="526" title=""></p>
 
           
         
@@ -2270,6 +2300,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

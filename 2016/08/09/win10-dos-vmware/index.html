@@ -111,7 +111,7 @@
 <meta property="og:image" content="http://img.blog.csdn.net/20151011140318973?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://img.blog.csdn.net/20151011140405672?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
 <meta property="og:image" content="http://img.blog.csdn.net/20151011140541133?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:updated_time" content="2017-02-05T08:19:33.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Win10中学习王爽《汇编语言》的解决方案">
 <meta name="twitter:description" content="前言这是采用VMwere Workstation12 pro虚拟机软件，搭建的MS-DOS学习环境，在windowsXP/8/10及linux中均可以使用（文后有下载地址），在这个环境中，我集成了CCDOS中文系统，pdos中文系统，使用这些系统，可以进行中文输入与显示。还集成了，十分著名的汇编语言调试工具TR，它比debug更加强大。并且集成了适合王爽汇编语言学习的微软汇编语言编译器masm5和">
@@ -402,7 +402,7 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是采用VMwere Workstation12 pro虚拟机软件，搭建的MS-DOS学习环境，在windowsXP/8/10及linux中均可以使用（文后有下载地址），在这个环境中，我集成了CCDOS中文系统，pdos中文系统，使用这些系统，可以进行中文输入与显示。还集成了，十分著名的汇编语言调试工具TR，它比debug更加强大。并且集成了适合王爽汇编语言学习的微软汇编语言编译器masm5和dos中最强大的文本编辑器 vim73 for DOS,这是一个支持彩色文本格式显示的汇编代码最佳工具，除此我还虚拟了一张1.44M的软盘，方便学习书中软盘操作实验，并且增加了长文件名称处理工具组合longdos等，在这个组合环境中，可以完成王爽汇编语言中的全部实验内容，远比dosbox更加强大易用，能真实的再现实际计算机真实硬件环境。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>这是采用VMwere Workstation12 pro虚拟机软件，搭建的MS-DOS学习环境，在windowsXP/8/10及linux中均可以使用（文后有下载地址），在这个环境中，我集成了CCDOS中文系统，pdos中文系统，使用这些系统，可以进行中文输入与显示。还集成了，十分著名的汇编语言调试工具TR，它比debug更加强大。并且集成了适合王爽汇编语言学习的微软汇编语言编译器masm5和dos中最强大的文本编辑器 vim73 for DOS,这是一个支持彩色文本格式显示的汇编代码最佳工具，除此我还虚拟了一张1.44M的软盘，方便学习书中软盘操作实验，并且增加了长文件名称处理工具组合longdos等，在这个组合环境中，可以完成王爽汇编语言中的全部实验内容，远比dosbox更加强大易用，能真实的再现实际计算机真实硬件环境。<br><a id="more"></a></p>
 <h2 id="启动学习环境"><a href="#启动学习环境" class="headerlink" title="启动学习环境"></a>启动学习环境</h2><p>1．首先启动vmware软件，然后点击【文件】——【打开】，在弹出的窗口中，找到D盘vmdos71,并选择MS-DOS.vmx文件，然后点击【打开】按钮:<br>2．当学习环境加载成功后，会在左侧列表中，看到名称为MS-DOS71的虚拟机，我们选择它，然后点击工具栏中的【启动】按钮，就可以启动虚拟机了。<br>好了，到此学习环境，就搭建成功了，下面章节，介绍本环境中一些工具使用方法。</p>
 <h2 id="CCDOS中文系统"><a href="#CCDOS中文系统" class="headerlink" title="CCDOS中文系统"></a>CCDOS中文系统</h2><p>在MS-DOS下，默认是不支持中文字符的输入与显示的，要想显示和输入中文字符串，就要加载中文处理模块，所以在这个学习环境中，我集成了CCDOS和pdos两套中文系统，相比较ucdos来说，速度和稳定性都不错，大家在使用时，只要选择其中一种即可。CCDOS是为我国第一台PC长城机制作的汉字系统，它在DOS时代，十分出名和稳定。</p>
 <h3 id="启动CCDOS"><a href="#启动CCDOS" class="headerlink" title="启动CCDOS"></a>启动CCDOS</h3><p>在命令行中输入ccdos，然后按回车键，就可以启动它，如下图所示：<br><img src="http://img.blog.csdn.net/20151011140318973?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQv/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center" alt=""><br>在CCDOS中，支持全拼和五笔输入，切换输入法方法是：</p>
@@ -901,6 +901,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

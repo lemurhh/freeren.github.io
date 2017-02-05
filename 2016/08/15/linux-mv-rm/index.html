@@ -102,19 +102,16 @@
 
 
 
-<meta name="description" content="移动和重命名文件——mv命令在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。
-cp -l test test1cp -s test">
+<meta name="description" content="移动和重命名文件——mv命令在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux命令——mv、rm命令">
 <meta property="og:url" content="https://www.lemurs.me/2016/08/15/linux-mv-rm/index.html">
 <meta property="og:site_name" content="Lemur博客">
-<meta property="og:description" content="移动和重命名文件——mv命令在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。
-cp -l test test1cp -s test">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:description" content="移动和重命名文件——mv命令在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。">
+<meta property="og:updated_time" content="2017-02-05T07:06:29.762Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux命令——mv、rm命令">
-<meta name="twitter:description" content="移动和重命名文件——mv命令在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。
-cp -l test test1cp -s test">
+<meta name="twitter:description" content="移动和重命名文件——mv命令在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。">
 
 
 
@@ -401,7 +398,7 @@ cp -l test test1cp -s test">
       
 
       
-        <h2 id="移动和重命名文件——mv命令"><a href="#移动和重命名文件——mv命令" class="headerlink" title="移动和重命名文件——mv命令"></a>移动和重命名文件——mv命令</h2><p>在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。</p>
+        <h2 id="移动和重命名文件——mv命令"><a href="#移动和重命名文件——mv命令" class="headerlink" title="移动和重命名文件——mv命令"></a>移动和重命名文件——mv命令</h2><p>在linux中移动和重命名文件和目录可以使用mv命令。移动文件可能会更改文件名，但会保留原来的索引节点号和时间戳。移动只带有硬链接(与文件完全相同的副本)的文件没有问题，但对于带有软链接的文件，会导致软链接指向一个无效的文件，从而不再是一个有效的链接。使用mv命令移动目录不会改变目录的结构，只是目录的名称发生了变化。<br><a id="more"></a></p>
 <p><pre>cp -l test test1<br>cp -s test test2<br>mv test test3 #test被重命名为test3，此时test1没有任何问题，但test2会成为一个无效链接<br>mv test3 test #test2恢复正常</pre><br>可以通过上面命令结合ls -sil命令，检验一下上一篇文章中关于两种链接的叙述。</p>
 <h2 id="删除文件——rm命令"><a href="#删除文件——rm命令" class="headerlink" title="删除文件——rm命令"></a>删除文件——rm命令</h2><p>删除文件是一个常见的操作。</p>
 <h3 id="基本格式"><a href="#基本格式" class="headerlink" title="基本格式"></a>基本格式</h3><p><pre>rm [-options] file</pre><br>该命令通常会让您确认是否删除文件，一旦通过该命令删除文件后将无法还原(bash shell中没有回收站)。rm命令也可以使用通配符。</p>
@@ -890,6 +887,21 @@ cp -l test test1cp -s test">
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

@@ -102,16 +102,16 @@
 
 
 
-<meta name="description" content="最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。在任务管理器中看了一下是“系统主机：本地服务”进程组占用的CPU过高。展开发现是其中的“windows update”的问题，并且我发现开着节能模式，在设置——更新和安全中，win10一直在试图更新，但始终为0%。于是问了下万能的度娘，找到了如下文章，按此操作，重启后问题解决，特此记录：[gra">
+<meta name="description" content="最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决win更新服务windows update占用CPU过高">
 <meta property="og:url" content="https://www.lemurs.me/2016/12/15/solve-winupdate-cpu/index.html">
 <meta property="og:site_name" content="Lemur博客">
-<meta property="og:description" content="最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。在任务管理器中看了一下是“系统主机：本地服务”进程组占用的CPU过高。展开发现是其中的“windows update”的问题，并且我发现开着节能模式，在设置——更新和安全中，win10一直在试图更新，但始终为0%。于是问了下万能的度娘，找到了如下文章，按此操作，重启后问题解决，特此记录：[gra">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+<meta property="og:description" content="最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。">
+<meta property="og:updated_time" content="2017-02-05T08:00:55.296Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解决win更新服务windows update占用CPU过高">
-<meta name="twitter:description" content="最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。在任务管理器中看了一下是“系统主机：本地服务”进程组占用的CPU过高。展开发现是其中的“windows update”的问题，并且我发现开着节能模式，在设置——更新和安全中，win10一直在试图更新，但始终为0%。于是问了下万能的度娘，找到了如下文章，按此操作，重启后问题解决，特此记录：[gra">
+<meta name="twitter:description" content="最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。">
 
 
 
@@ -398,7 +398,7 @@
       
 
       
-        <p>最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。在任务管理器中看了一下是“系统主机：本地服务”进程组占用的CPU过高。展开发现是其中的“windows update”的问题，并且我发现开着节能模式，在设置——更新和安全中，win10一直在试图更新，但始终为0%。于是问了下万能的度娘，找到了如下文章，按此操作，重启后问题解决，特此记录：<br>[gray-strip]今天无意间在服务器上面更新系统时候，发现服务器超级卡，查看了下进程，svchost.exe占用CPU高达99%。太不正常了，后来百度了下，有不少人遇到过这个问题，但实际能解决的方法实在是太少了。下面是本人好不容易找出的解决方法，特地分享给遇到相同问题的朋友。Microsoft Update更新并不是所有电脑都会出现CPU 100%的。<br>一、关闭自动更新（我的电脑-属性-自动更新-关闭）, 重新启动计算机，如下检查或操作<br>1. 点“开始-运行”, 输入 services.msc 并回车<br>2. 双击服务 Automatic Updates<br>3. 点“登录”选项卡, 确保选项“本地系统帐户”被选中，并其中的“允许服务与桌面交互”不被选中<br>4. 检查下面“硬件配置文件”中的服务已经启用，如果没有，请点击“启用”按钮，激活它<br>5. 点回“常规”选项卡，设“启动类型”为“自动”，在“服务状态”下面点击“启动”按钮，开启这个服务<br>6. 重复上面的步骤，对另一个服务: Background Intelligent Transfer Service (BITS) 进行同样的操作，一定要开启此服务，很多人会忽视它<br>二、重新注册 Windows Update 组件<br>1.点“开始-运行”, 输入命令 REGSVR32 WUAPI.DLL 并回车<br>2.当你看到“WUAPI.DLL中的 DllRegisterServer 成功”这个消息就说明成功了<br>3.请重复这个步骤，逐一运行下面的命令 </p>
+        <p>最近电脑的待机大不如前，担心是电池的问题，可偶然间发现CPU的占用率维持在30%不下，即使我什么也不做。<br><a id="more"></a><br>在任务管理器中看了一下是“系统主机：本地服务”进程组占用的CPU过高。展开发现是其中的“windows update”的问题，并且我发现开着节能模式，在设置——更新和安全中，win10一直在试图更新，但始终为0%。于是问了下万能的度娘，找到了如下文章，按此操作，重启后问题解决，特此记录：<br>[gray-strip]今天无意间在服务器上面更新系统时候，发现服务器超级卡，查看了下进程，svchost.exe占用CPU高达99%。太不正常了，后来百度了下，有不少人遇到过这个问题，但实际能解决的方法实在是太少了。下面是本人好不容易找出的解决方法，特地分享给遇到相同问题的朋友。Microsoft Update更新并不是所有电脑都会出现CPU 100%的。<br>一、关闭自动更新（我的电脑-属性-自动更新-关闭）, 重新启动计算机，如下检查或操作<br>1. 点“开始-运行”, 输入 services.msc 并回车<br>2. 双击服务 Automatic Updates<br>3. 点“登录”选项卡, 确保选项“本地系统帐户”被选中，并其中的“允许服务与桌面交互”不被选中<br>4. 检查下面“硬件配置文件”中的服务已经启用，如果没有，请点击“启用”按钮，激活它<br>5. 点回“常规”选项卡，设“启动类型”为“自动”，在“服务状态”下面点击“启动”按钮，开启这个服务<br>6. 重复上面的步骤，对另一个服务: Background Intelligent Transfer Service (BITS) 进行同样的操作，一定要开启此服务，很多人会忽视它<br>二、重新注册 Windows Update 组件<br>1.点“开始-运行”, 输入命令 REGSVR32 WUAPI.DLL 并回车<br>2.当你看到“WUAPI.DLL中的 DllRegisterServer 成功”这个消息就说明成功了<br>3.请重复这个步骤，逐一运行下面的命令 </p>
 <p><pre>REGSVR32 WUAUENG.DLL<br>REGSVR32 WUAUENG1.DLL<br>REGSVR32 ATL.DLL<br>REGSVR32 WUCLTUI.DLL<br>REGSVR32 WUPS.DLL<br>REGSVR32 WUPS2.DLL<br>REGSVR32 WUWEB.DLL </pre><br>三、清除被破坏的 Windows Update 临时文件夹<br>1. 点“开始-运行”,输入命令 net stop WuAuServ 并回车<br>2. 点“开始-运行”, 输入命令 %windir% 并回车，在打开的文件夹窗口中，找到文件夹 SoftwareDistribution 把它改名成 SoftwareDistribution1（或别的，可任意）<br>3. 点“开始-运行”, 输入命令 net start WuAuServ 并回车<br>四、重新启动计算机，点“我的电脑 - 属性 - 自动更新”把“自动（推荐）”选中，或者定期打开下面地址进行 你的 Windows 更新吧<br><a href="http://update.microsoft.com/windowsupdate/v6/default.aspx?ln=zh-cn" target="_blank" rel="external">http://update.microsoft.com/windowsupdate/v6/default.aspx?ln=zh-cn</a><br>本人推荐定期去网站更新，不要打开“自动更新”功能，这样即使出了问题也好解决 </p>
 <blockquote>
 <p>注：在你使用“自动更新”一段时间后，也可能就会重新出现这个棘手的毛病，这完全是微软方面的事，我在这也不想多说，你只要重新按照上面的步骤搞一下就能恢复如初了。</p>
@@ -861,6 +861,21 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 

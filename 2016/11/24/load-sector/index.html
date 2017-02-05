@@ -109,7 +109,7 @@ tar -zvxf bochs-2.4.6.tar.gz
 cd bochs-2.4.6
 ./configure --enbale-debugger --enable-disasm
 make
-make in">
+make i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="bochs安装及使用AT&T制作引导扇区">
 <meta property="og:url" content="https://www.lemurs.me/2016/11/24/load-sector/index.html">
@@ -121,8 +121,9 @@ tar -zvxf bochs-2.4.6.tar.gz
 cd bochs-2.4.6
 ./configure --enbale-debugger --enable-disasm
 make
-make in">
-<meta property="og:updated_time" content="2017-02-01T14:06:21.718Z">
+make i">
+<meta property="og:image" content="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/11/2016112413533946.png">
+<meta property="og:updated_time" content="2017-02-05T07:15:49.575Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="bochs安装及使用AT&T制作引导扇区">
 <meta name="twitter:description" content="bochs安装可以使用包管理安装。
@@ -132,7 +133,8 @@ tar -zvxf bochs-2.4.6.tar.gz
 cd bochs-2.4.6
 ./configure --enbale-debugger --enable-disasm
 make
-make in">
+make i">
+<meta name="twitter:image" content="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/11/2016112413533946.png">
 
 
 
@@ -419,7 +421,8 @@ make in">
       
 
       
-        <h2 id="bochs安装"><a href="#bochs安装" class="headerlink" title="bochs安装"></a>bochs安装</h2><p>可以使用包管理安装。</p>
+        <a id="more"></a>
+<h2 id="bochs安装"><a href="#bochs安装" class="headerlink" title="bochs安装"></a>bochs安装</h2><p>可以使用包管理安装。</p>
 <pre>apt-get install vgabios bochs bochs-x bximage</pre>
 但这种安装方式是没有调试功能的。如需调试功能，需要源代码编译安装。
 <pre>tar -zvxf bochs-2.4.6.tar.gz
@@ -498,7 +501,7 @@ bootmessage:
 <blockquote>
 <p>注：最后一个选项是说不截断软盘，因为boot.bin比lemur.img要小</p>
 </blockquote>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>将前面写好的bochs配置文件与lemur.img放在一个目录下，在该目录下运行bochs。<br>[gallery link=”file” columns=”1” size=”medium” ids=”331”]</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>将前面写好的bochs配置文件与lemur.img放在一个目录下，在该目录下运行bochs。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/11/2016112413533946.png" width="700" height="526" title=""></p>
 
       
     </div>
@@ -982,6 +985,21 @@ bootmessage:
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
 
