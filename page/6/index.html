@@ -1378,90 +1378,14 @@
 
       
         
-          
-            <a id="more"></a>
-<h2 id="bochs安装"><a href="#bochs安装" class="headerlink" title="bochs安装"></a>bochs安装</h2><p>可以使用包管理安装。</p>
-<pre>apt-get install vgabios bochs bochs-x bximage</pre>
-但这种安装方式是没有调试功能的。如需调试功能，需要源代码编译安装。
-<pre>tar -zvxf bochs-2.4.6.tar.gz
-cd bochs-2.4.6
-./configure --enbale-debugger --enable-disasm
-make
-make install</pre>
-我使用的是kali，在执行configure时出现错误提示:
-> pkg-config was not found,or unbale to access the gtk+ 2.0 package.Install the gtk+ development package,or disable the gui debugger,or the wxWidgets display library (whichever is being used)
-解决办法是：
-<pre>apt-get install libgtk2.0-dev</pre>
-
-<h2 id="配置bochs"><a href="#配置bochs" class="headerlink" title="配置bochs"></a>配置bochs</h2><p>安装好bochs后需要配置bochs，通过配置文件实现。bochs默认情况下以当前工作目录下的bochsrc文件为配置文件。以下是我的配置文件：</p>
-<pre>
-################################################
-#configure file for Bochs
-################################################
-
-# how much memory the emulated machine will have
-megs: 32
-
-# filename of Rom images, 注意下边要根据你安装目录来调整
-romimage: file=/usr/local/share/bochs/BIOS-bochs-latest
-vgaromimage: file=/usr/local/share/bochs/VGABIOS-lgpl-latest
-
-#what disk images will be used
-floppya: 1_44=lemur.img, status=inserted
-
-#choose the boot disk.
-boot: floppy
-
-#where do we send log messages?
-log: bochsout.txt
-
-#disable the mouse
-mouse: enabled=0
-
-# enable key mapping, using US layout as default.
-keyboard:keymap=/usr/local/share/bochs/keymaps/x11-pc-de.map</pre>
-
-<h2 id="创建镜像文件"><a href="#创建镜像文件" class="headerlink" title="创建镜像文件"></a>创建镜像文件</h2><p>bochs提供了bximage这个工具创建镜像，在shell中输入bximage即可打开。这里，我创建了一个名为”lemur.img”的软盘镜像文件。</p>
-<h2 id="引导扇区代码"><a href="#引导扇区代码" class="headerlink" title="引导扇区代码"></a>引导扇区代码</h2><p>这是使用AT&amp;T汇编写的引导扇区代码，用来调用BIOS在屏幕上输出”hello”。由于没有清屏，输出结果有些杂乱。</p>
-<pre>#boot.s
-.text
-.global _start
-_start:    # 程序入口
-.code16 #16位代码
-movw %cs,%ax
-movw %ax,%ds
-movw %ax,%es
-call print
-hlt
-
-print:
-movw $bootmessage,%ax
-movw %ax,%bp
-movw $0x5,%cx
-movw $0x1301,%ax
-movw $0xc,%bx
-movb $0,%dl
-int $0x10
-ret
-
-bootmessage:
-.ascii &quot;hello&quot;
-.fill 510-(.-_start),1,0  #填充使达到512个字节
-.word 0xaa55  #引导扇区结束标志</pre>
-
-<h2 id="编译链接"><a href="#编译链接" class="headerlink" title="编译链接"></a>编译链接</h2><p>经过编译链接生成boot.bin文件。</p>
-<p><pre>as boot.s -o boot.o<br>ld –oformat binary -N -e _start -Ttext 0x7c00 -o boot.bin boot.o</pre></p>
-<blockquote>
-<p>注:ld可以被配置为支持多于一种的目标文件. binary表示没有程序头和其他信息，仅仅是一些裸数据。如果没有这个选项，将被默认链接为elf格式。-N把text和data节设置为可读写。- Ttext将text节起始地址设置为0x7c00（在jmp和数据引用等重定位链接时会用到这个参考值），所有的引用地址都是在7c00这个地址上加出 来的。-e选项指定程序入口点</p>
-</blockquote>
-<h2 id="写入镜像文件"><a href="#写入镜像文件" class="headerlink" title="写入镜像文件"></a>写入镜像文件</h2><p>使用dd命令将boot.bin文件写入lemur.img镜像文件:</p>
-<p><pre>dd if=boot.bin of=lemur.img bs=512 count=1 conv=notrunc</pre></p>
-<blockquote>
-<p>注：最后一个选项是说不截断软盘，因为boot.bin比lemur.img要小</p>
-</blockquote>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>将前面写好的bochs配置文件与lemur.img放在一个目录下，在该目录下运行bochs。<br><img src="https://fs-image.oss-cn-shenzhen.aliyuncs.com/2016/11/2016112413533946.png" width="700" height="526" title=""></p>
-
-          
+          <h2 id="bochs安装"><a href="#bochs安装" class="headerlink" title="bochs安装"></a>bochs安装</h2>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/11/24/load-sector/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
